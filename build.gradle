@@ -1,39 +1,61 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '4.0.2'
-	id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.springframework.boot' version '3.5.6' apply false
+    id 'io.spring.dependency-management' version '1.1.7' apply false
+    id 'org.flywaydb.flyway' version '11.7.2'
+    id 'java'
 }
 
-group = 'com.inspien'
-version = '0.0.1-SNAPSHOT'
-description = 'Demo project for Spring Boot'
+allprojects {
+    apply plugin: 'java'
+    group = 'com.inspien'
+    version = '0.0.1-SNAPSHOT'
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
+    repositories { mavenCentral() }
+
+    java {
+        toolchain { languageVersion = JavaLanguageVersion.of(21) }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.release.set(21)
+        options.encoding = 'UTF-8'
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force 'com.google.protobuf:protobuf-java:3.21.9'
+        }
+    }
+
+    dependencies {
+        implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+        implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.1'
+
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+        testImplementation 'org.mockito:mockito-core:5.3.1'
+        testImplementation 'org.mockito:mockito-junit-jupiter:5.3.1'
+    }
+
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
+    }
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+subprojects {
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories { mavenCentral() }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:3.5.6"
+        }
+    }
 }
 
-repositories {
-	mavenCentral()
-}
+project(":modules-api:bootstrap") {
+    apply plugin: 'org.springframework.boot'
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
+    tasks.named("bootJar") { enabled = true }
+    tasks.named("jar") { enabled = false }
 }
