@@ -17,9 +17,14 @@ dependencies {
     implementation project(':modules-api:application')
     implementation project(':modules-api:domain')
     implementation project(':modules-api:infrastructure')
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml"
 
     implementation libs.spring.boot.starter.jpa
+    implementation libs.spring.boot.starter.web
     implementation libs.bundles.bootstrap
+    implementation libs.lombok
+    annotationProcessor libs.lombok
+
     testImplementation libs.bundles.test
 
     testImplementation(libs.spring.boot.starter.test) {
