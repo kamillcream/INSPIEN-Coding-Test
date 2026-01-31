@@ -1,0 +1,44 @@
+package com.inspien.domain;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@Builder
+@RequiredArgsConstructor
+public class Order {
+    private String orderId;
+
+    private String userId;
+
+    private String itemId;
+
+    private String applicantKey;
+
+    private String name;
+
+    private String address;
+
+    private String itemName;
+
+    private String price;
+
+    private String status;
+
+    public static Order create(String orderId, String userId, String itemId, String applicantKey, String name,
+                               String address, String itemName, Integer price, String status) {
+        return Order.builder()
+                .orderId(orderId)
+                .userId(userId)
+                .itemId(itemId)
+                .applicantKey(applicantKey)
+                .name(name)
+                .address(address)
+                .itemName(itemName)
+                .price(price.toString())
+                .status(status)
+                .build();
+
+    }
+}
