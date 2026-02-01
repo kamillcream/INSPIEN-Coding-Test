@@ -40,7 +40,7 @@ public class OrderCommandService implements OrderCommandUseCase {
             }
             OrderHeader header = headersByUser.get(item.getUserId());
 
-            Order order = Order.create("A114", item.getUserId(), item.getItemId(), "1",
+            Order order = Order.create(generateOrderId(), item.getUserId(), item.getItemId(), "1",
                     header.getName(), header.getAddress(), item.getItemName(), item.getPrice(), header.getStatus());
 
             repo.save(order);
@@ -85,5 +85,28 @@ public class OrderCommandService implements OrderCommandUseCase {
                 order.getItemName(),
                 order.getPrice()
         ) + "\n";
+    }
+
+    private String generateOrderId() {
+        String lastId = repo.findLastId();
+
+        if (lastId == null) {
+            return "A001";
+        }
+
+        char prefix = lastId.charAt(0);
+        int number = Integer.parseInt(lastId.substring(1));
+
+        number++;
+
+        if (number > 999) {
+            number = 1;
+            prefix++;
+
+            if (prefix > 'Z') {
+                throw new IllegalStateException("주문 ID 최대 범위를 초과했습니다.");
+            }
+        }
+        return String.format("%c%03d", prefix, number);
     }
 }
