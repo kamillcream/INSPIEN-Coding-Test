@@ -39,8 +39,8 @@ public class OrderCommandService implements OrderCommandUseCase {
         Map<String, OrderHeader> headersByUser = groupingHeaderByUser(headers);
 
         for (OrderItem item : command.getItems()) {
-            if(!headersByUser.containsKey(item.getUserId())) { // 예외. Item에 있는 UserId가 Header에는 없는 경우.
-                throw new RuntimeException();
+            if(!headersByUser.containsKey(item.getUserId())) {
+                throw new IllegalArgumentException("Header에 존재하지 않는 userId: " + item.getUserId());
             }
             OrderHeader header = headersByUser.get(item.getUserId());
 
