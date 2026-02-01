@@ -8,6 +8,7 @@ import com.inspien.application.port.out.OrderOutPort;
 import com.inspien.application.port.out.SftpOutPort;
 import com.inspien.domain.Order;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +30,9 @@ public class OrderCommandService implements OrderCommandUseCase {
     private final OrderOutPort repo;
     private final SftpOutPort sftpService;
 
+    @Value("${applicantKey}")
+    private String applicantKey;
+
     @Override
     public void processOrder(OrderCreateCommand command) {
         List<OrderHeader> headers = command.getHeaders();
@@ -40,7 +44,7 @@ public class OrderCommandService implements OrderCommandUseCase {
             }
             OrderHeader header = headersByUser.get(item.getUserId());
 
-            Order order = Order.create(generateOrderId(), item.getUserId(), item.getItemId(), "1",
+            Order order = Order.create(generateOrderId(), item.getUserId(), item.getItemId(), applicantKey,
                     header.getName(), header.getAddress(), item.getItemName(), item.getPrice(), header.getStatus());
 
             repo.save(order);
