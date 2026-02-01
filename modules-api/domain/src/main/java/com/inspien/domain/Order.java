@@ -26,7 +26,7 @@ public class Order {
     private String status;
 
     public static Order create(String orderId, String userId, String itemId, String applicantKey, String name,
-                               String address, String itemName, Integer price, String status) {
+                               String address, String itemName, String price, String status) {
         return Order.builder()
                 .orderId(orderId)
                 .userId(userId)
@@ -35,7 +35,7 @@ public class Order {
                 .name(name)
                 .address(address)
                 .itemName(itemName)
-                .price(price != null ? price.toString() : null)
+                .price(price)
                 .status(status)
                 .build();
 

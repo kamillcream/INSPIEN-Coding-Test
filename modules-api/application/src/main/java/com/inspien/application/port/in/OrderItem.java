@@ -14,5 +14,5 @@ public class OrderItem {
 
     private String itemName;
 
-    private Integer price;
+    private int price;
 }
