@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: inspien
+  datasource:
+    url: jdbc:mysql://${ORDER_TABLE_HOST}:${ORDER_TABLE_PORT}/${ORDER_TABLE_TABLENAME}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${ORDER_TABLE_USER}
+    password: ${ORDER_TABLE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+applicantKey: ${APPLICANT_KEY}
+
+
+sftp:
+  host: ${SFTP_CONN_HOST}
+  port: ${SFTP_CONN_PORT}
+  username: ${SFTP_CONN_USER}
+  password: ${SFTP_CONN_PASSWORD}
+  remote-dir: ${FILE_PATH}

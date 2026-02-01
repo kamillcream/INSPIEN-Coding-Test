@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: inspien
+  datasource:
+    url: jdbc:mysql://localhost:3306/inspien?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ${LOCAL_MYSQL_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+applicantKey: ${APPLICANT_KEY}
+
+sftp:
+  host: localhost
+  port: 2222
+  username: test
+  password: 1234
+  remote-dir: upload
+
