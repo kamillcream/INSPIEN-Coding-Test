@@ -23,11 +23,12 @@ public class OrderRequestDto {
     private List<OrderItemDto> items;
 
     public OrderCreateCommand toCommand(){
-        List<OrderHeader> orderHeaders = this.headers
-                .stream().map(OrderHeaderDto::to).toList();
-
-        List<OrderItem> orderItems = this.items
-                .stream().map(OrderItemDto::to).toList();
+        List<OrderHeader> orderHeaders = this.headers == null
+                ? List.of()
+                : this.headers.stream().map(OrderHeaderDto::to).toList();
+        List<OrderItem> orderItems = this.items == null
+                ? List.of()
+                : this.items.stream().map(OrderItemDto::to).toList();
 
         return new OrderCreateCommand(
                 orderHeaders, orderItems
