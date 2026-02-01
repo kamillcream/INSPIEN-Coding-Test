@@ -52,7 +52,11 @@ public class OrderCommandService implements OrderCommandUseCase {
             String receiptContent = generateFileContent(order);
             try {
                 File receiptFile = generateReceiptTxtFile(receiptContent);
-                sftpService.sendBySftp(receiptFile.toPath());
+                try {
+                    sftpService.sendBySftp(receiptFile.toPath());
+                    } finally {
+                    Files.deleteIfExists(receiptFile.toPath());
+                    }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
