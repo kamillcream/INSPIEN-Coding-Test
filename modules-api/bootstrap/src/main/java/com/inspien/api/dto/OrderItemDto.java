@@ -18,7 +18,7 @@ public class OrderItemDto {
     private String itemId;
 
     @JacksonXmlProperty(localName = "ITEM_NAME")
-    @NotBlank(message = "ITEM_NAME는 필수입니다.")
+    @NotBlank(message = "ITEM_NAME은 필수입니다.")
     private String itemName;
 
     @JacksonXmlProperty(localName = "PRICE")
