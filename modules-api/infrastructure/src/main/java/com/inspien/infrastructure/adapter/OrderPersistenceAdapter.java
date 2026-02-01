@@ -19,4 +19,9 @@ public class OrderPersistenceAdapter implements OrderOutPort {
         OrderEntity entity = mapper.toEntity(order);
         repo.save(entity);
     }
+
+    @Override
+    public String findLastId() {
+        return repo.findLastId();
+    }
 }
