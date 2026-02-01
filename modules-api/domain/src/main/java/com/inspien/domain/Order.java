@@ -35,7 +35,7 @@ public class Order {
                 .name(name)
                 .address(address)
                 .itemName(itemName)
-                .price(price.toString())
+                .price(price != null ? price.toString() : null)
                 .status(status)
                 .build();
 
