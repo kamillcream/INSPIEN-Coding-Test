@@ -64,7 +64,8 @@ public class OrderCommandService implements OrderCommandUseCase {
         return headers.stream()
                 .collect(Collectors.toMap(
                         OrderHeader::getUserId,
-                        Function.identity()
+                                Function.identity(),
+                        (existing, replacement) -> existing
                 ));
     }
 
