@@ -94,4 +94,4 @@ class FileVisitor extends SimpleFileVisitor<Path> {
     }
 }
 
-includeModulesFrom('modules-api')
+includeModulesFrom('modules-api', 'modules-batch')
