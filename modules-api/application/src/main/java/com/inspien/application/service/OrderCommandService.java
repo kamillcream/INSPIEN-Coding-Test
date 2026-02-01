@@ -45,7 +45,7 @@ public class OrderCommandService implements OrderCommandUseCase {
             OrderHeader header = headersByUser.get(item.getUserId());
 
             Order order = Order.create(generateOrderId(), item.getUserId(), item.getItemId(), applicantKey,
-                    header.getName(), header.getAddress(), item.getItemName(), item.getPrice(), header.getStatus());
+                    header.getName(), header.getAddress(), item.getItemName(), String.valueOf(item.getPrice()), header.getStatus());
 
             repo.save(order);
 
