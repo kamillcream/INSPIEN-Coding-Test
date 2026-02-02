@@ -1,9 +1,9 @@
 package com.inspien.api.scheduler;
 
+import com.inspien.application.port.in.KafkaProducerUseCase;
+import com.inspien.application.port.in.OrderShipmentPayload;
 import com.inspien.application.port.out.OrderOutPort;
 import com.inspien.domain.Order;
-import com.inspien.infrastructure.kafka.dto.OrderShipmentPayload;
-import com.inspien.infrastructure.kafka.service.KafkaProducerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BatchScheduler {
     private final OrderOutPort orderRepo;
-    private final KafkaProducerService kafkaProducerService;
+    private final KafkaProducerUseCase kafkaProducerService;
 
     // TODO: 5분으로 변경
     @Scheduled(cron = "*/5 * * * * *")
