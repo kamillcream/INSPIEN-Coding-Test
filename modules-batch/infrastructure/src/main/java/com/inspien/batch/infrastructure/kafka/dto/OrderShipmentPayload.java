@@ -1,18 +1,13 @@
-package com.inspien.batch.domain;
+package com.inspien.batch.infrastructure.kafka.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Transporter {
-
-    private String shipmentId;
-
+public class OrderShipmentPayload {
     private String orderId;
 
     private String itemId;
