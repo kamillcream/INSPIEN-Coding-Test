@@ -13,9 +13,10 @@ public class OrderItemReader {
 
     private final EntityManagerFactory entityManagerFactory;
 
-    @Bean
+    @Bean("orderItemReader")
     public JpaPagingItemReader<OrderEntity> reader() {
         JpaPagingItemReader<OrderEntity> reader = new JpaPagingItemReader<>();
+        reader.setName("orderItemReader");
         reader.setEntityManagerFactory(entityManagerFactory);
         reader.setQueryString("""
             SELECT o FROM OrderEntity o
