@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management'
+}
+tasks.named('jar') {
+    enabled = true
+}
+
+dependencies {
+    implementation project(':modules-batch:common')
+    implementation project(':modules-api:api-domain')
+    implementation project(':modules-api:api-infrastructure')
+    implementation project(':modules-batch:batch-domain')
+    implementation project(':modules-batch:batch-application')
+
+    implementation libs.spring.boot.starter.jpa
+    implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.spring.batch
+    implementation libs.mysql.connector
+    implementation libs.bundles.jwt
+
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+
+    implementation libs.mapstruct
+    annotationProcessor libs.mapstruct.processor
+    testAnnotationProcessor libs.mapstruct.processor
+
+    testImplementation libs.spring.boot.starter.test
+    testImplementation libs.database.h2
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
