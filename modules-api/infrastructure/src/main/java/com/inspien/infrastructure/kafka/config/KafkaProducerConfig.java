@@ -1,7 +1,6 @@
 package com.inspien.infrastructure.kafka.config;
 
-
-import com.inspien.infrastructure.kafka.dto.OrderShipmentPayload;
+import com.inspien.application.port.in.OrderShipmentPayload;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;

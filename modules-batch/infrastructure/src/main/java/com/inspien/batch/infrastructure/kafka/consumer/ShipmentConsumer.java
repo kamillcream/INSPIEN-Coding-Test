@@ -2,7 +2,6 @@ package com.inspien.batch.infrastructure.kafka.consumer;
 
 import com.inspien.batch.application.port.in.ShipmentCommandUseCase;
 import com.inspien.batch.application.port.in.dto.OrderShipmentCommand;
-import com.inspien.batch.infrastructure.kafka.dto.OrderShipmentPayload;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -17,7 +16,7 @@ public class ShipmentConsumer {
     private final ShipmentCommandUseCase shipmentCommandService;
 
     @KafkaListener(topics = "shipment.batch", groupId = "shipment-processor", containerFactory = "orderShipmentKafkaListenerContainerFactory")
-    public void consumeBatchEvent(@Payload OrderShipmentPayload payload) {
+    public void consumeBatchEvent(@Payload OrderShipmentCommand payload) {
         shipmentCommandService.processShipment(OrderShipmentCommand.create(
                 payload.getOrderId(), payload.getItemId(), payload.getApplicantKey(), payload.getAddress()
         ));
