@@ -18,7 +18,6 @@ public class SuccessEventConsumer {
     @KafkaListener(topics = "shipment.success", groupId = "order-processor", containerFactory = "eventKafkaListenerContainerFactory")
     @Transactional
     public void consumeSuccessEvent(@Payload String orderId) {
-        System.out.println(orderId);
         repo.markOrderSuccess(orderId);
     }
 }
