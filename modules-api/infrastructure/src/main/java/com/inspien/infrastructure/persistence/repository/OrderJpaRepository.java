@@ -22,7 +22,7 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, String> {
             """)
     List<OrderEntity> findAllByOrderByOrderIdDesc(Pageable pageable);
 
-    @Modifying
+    @Modifying(flushAutomatically = true, clearAutomatically = true)
     @Query("""
     UPDATE OrderEntity o
     SET o.status = 'Y'
