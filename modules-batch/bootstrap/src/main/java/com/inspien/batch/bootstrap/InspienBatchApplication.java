@@ -6,14 +6,12 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication(scanBasePackages = { "com.inspien.batch", "com.inspien.infrastructure.mapper"})
+@SpringBootApplication(scanBasePackages = { "com.inspien.batch"})
 @EntityScan(basePackages = {
-        "com.inspien.batch.infrastructure.persistence.entity",
-        "com.inspien.infrastructure.persistence.entity"
+        "com.inspien.batch.infrastructure.persistence.entity"
 })
 @EnableJpaRepositories(basePackages = {
-        "com.inspien.batch.infrastructure.persistence.repository",
-        "com.inspien.infrastructure.persistence.repository"
+        "com.inspien.batch.infrastructure.persistence.repository"
 })
 @EnableScheduling
 public class InspienBatchApplication {
