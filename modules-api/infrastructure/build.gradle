@@ -8,8 +8,8 @@ tasks.named('jar') {
 
 dependencies {
     implementation project(':modules-api:common')
-    implementation project(':modules-api:domain')
-    implementation project(':modules-api:application')
+    implementation project(':modules-api:api-domain')
+    implementation project(':modules-api:api-application')
     implementation 'com.jcraft:jsch:0.1.55'
 
     implementation libs.spring.boot.starter.jpa

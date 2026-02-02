@@ -8,7 +8,7 @@ tasks.named('jar') {
 
 dependencies {
     implementation project(':modules-api:common')
-    implementation project(':modules-api:domain')
+    implementation project(':modules-api:api-domain')
 
     implementation libs.spring.boot.starter.web
     implementation libs.spring.boot.spring.doc

@@ -13,10 +13,10 @@ tasks.named('bootJar') {
 }
 
 dependencies {
-    implementation project(':modules-api:application')
+    implementation project(':modules-api:api-application')
     implementation project(':modules-api:common')
-    implementation project(':modules-api:domain')
-    implementation project(':modules-api:infrastructure')
+    implementation project(':modules-api:api-domain')
+    implementation project(':modules-api:api-infrastructure')
     implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.16.1"
 
     implementation libs.spring.boot.starter.jpa
