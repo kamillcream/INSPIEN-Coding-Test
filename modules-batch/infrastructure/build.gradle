@@ -14,10 +14,8 @@ dependencies {
     implementation project(':modules-batch:batch-application')
 
     implementation libs.spring.boot.starter.jpa
-    implementation libs.spring.boot.starter.web
     implementation libs.spring.boot.spring.batch
     implementation libs.mysql.connector
-    implementation libs.bundles.jwt
 
     compileOnly libs.lombok
     annotationProcessor libs.lombok
