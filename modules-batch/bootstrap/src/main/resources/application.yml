@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: inspien
+  datasource:
+    url: jdbc:mysql://${SHIP_TABLE_HOST}:${SHIP_TABLE_PORT}/${SHIP_TABLE_TABLENAME}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${SHIP_TABLE_USER}
+    password: ${SHIP_TABLE_PASSWORD}
+
+applicantKey: ${APPLICANT_KEY}
