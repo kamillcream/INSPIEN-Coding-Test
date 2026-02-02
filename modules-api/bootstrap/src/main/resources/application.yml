@@ -7,6 +7,10 @@ spring:
     username: ${ORDER_TABLE_USER}
     password: ${ORDER_TABLE_PASSWORD}
 
+  jpa:
+    hibernate:
+      ddl-auto: none
+
 applicantKey: ${APPLICANT_KEY}
 
 
