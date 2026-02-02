@@ -17,9 +17,7 @@ public class ShipmentConsumer {
 
     @KafkaListener(topics = "shipment.batch", groupId = "shipment-processor", containerFactory = "orderShipmentKafkaListenerContainerFactory")
     public void consumeBatchEvent(@Payload OrderShipmentCommand payload) {
-        shipmentCommandService.processShipment(OrderShipmentCommand.create(
-                payload.getOrderId(), payload.getItemId(), payload.getApplicantKey(), payload.getAddress()
-        ));
+        shipmentCommandService.processShipment(payload);
     }
 }
 

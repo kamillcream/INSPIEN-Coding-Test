@@ -15,8 +15,4 @@ public class OrderShipmentCommand {
     private String applicantKey;
 
     private String address;
-
-    public static OrderShipmentCommand create(String orderId, String itemId, String applicantKey, String address) {
-        return new OrderShipmentCommand(orderId, itemId, applicantKey, address);
-    }
 }
