@@ -24,7 +24,6 @@ public class KafkaConsumerConfig {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
-        props.put(JsonDeserializer.TRUSTED_PACKAGES, "com.inspien.batch.infrastructure.kafka.dto");
         props.put(JsonDeserializer.USE_TYPE_INFO_HEADERS, false); // 헤더에 타입 정보 생략 → DTO가 정확해야 함
         return props;
     }
