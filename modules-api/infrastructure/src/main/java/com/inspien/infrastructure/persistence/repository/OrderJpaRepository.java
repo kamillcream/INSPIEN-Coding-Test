@@ -23,6 +23,7 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, String> {
     List<OrderEntity> findLatestOrder(Pageable pageable);
 
 
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("""
             SELECT o FROM OrderEntity o
             WHERE o.status = 'N'
