@@ -2,7 +2,7 @@ package com.inspien.batch.infrastructure.persistence.writer;
 
 import com.inspien.batch.domain.Transporter;
 import com.inspien.batch.infrastructure.persistence.entity.TransporterEntity;
-import com.inspien.batch.infrastructure.persistence.mapper.TransportMapper;
+import com.inspien.batch.infrastructure.persistence.mapper.TransporterMapper;
 import com.inspien.batch.infrastructure.persistence.repository.TransporterJpaRepository;
 import com.inspien.infrastructure.persistence.repository.OrderJpaRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.List;
 public class TransporterWriter implements ItemWriter<Transporter> {
 
     private final TransporterJpaRepository repo;
-    private final TransportMapper mapper;
+    private final TransporterMapper mapper;
     private final OrderJpaRepository orderRepo;
 
     @Override
