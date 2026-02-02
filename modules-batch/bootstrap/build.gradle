@@ -13,14 +13,18 @@ tasks.named('bootJar') {
 }
 
 dependencies {
-    implementation project(':modules-api:api-application')
-    implementation project(':modules-api:common')
     implementation project(':modules-api:api-domain')
     implementation project(':modules-api:api-infrastructure')
+    implementation project(':modules-batch:batch-application')
+    implementation project(':modules-batch:common')
+    implementation project(':modules-batch:batch-domain')
+    implementation project(':modules-batch:batch-infrastructure')
+
     implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.16.1"
 
     implementation libs.spring.boot.starter.jpa
     implementation libs.spring.boot.starter.web
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation libs.bundles.bootstrap
     implementation libs.lombok
     annotationProcessor libs.lombok

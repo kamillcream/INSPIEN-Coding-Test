@@ -7,13 +7,14 @@ tasks.named('jar') {
 }
 
 dependencies {
-    implementation project(':modules-api:common')
+    implementation project(':modules-batch:common')
     implementation project(':modules-api:api-domain')
-    implementation project(':modules-api:api-application')
-    implementation 'com.jcraft:jsch:0.1.55'
+    implementation project(':modules-api:api-infrastructure')
+    implementation project(':modules-batch:batch-domain')
+    implementation project(':modules-batch:batch-application')
 
     implementation libs.spring.boot.starter.jpa
-    implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.spring.batch
     implementation libs.mysql.connector
 
     compileOnly libs.lombok

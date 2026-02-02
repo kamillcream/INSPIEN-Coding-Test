@@ -59,3 +59,10 @@ project(":modules-api:bootstrap") {
     tasks.named("bootJar") { enabled = true }
     tasks.named("jar") { enabled = false }
 }
+
+project(":modules-batch:bootstrap") {
+    apply plugin: 'org.springframework.boot'
+
+    tasks.named("bootJar") { enabled = true }
+    tasks.named("jar") { enabled = false }
+}

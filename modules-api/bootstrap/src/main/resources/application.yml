@@ -7,14 +7,6 @@ spring:
     username: ${ORDER_TABLE_USER}
     password: ${ORDER_TABLE_PASSWORD}
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-
 applicantKey: ${APPLICANT_KEY}
 
 

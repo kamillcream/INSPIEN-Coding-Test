@@ -7,11 +7,11 @@ tasks.named('jar') {
 }
 
 dependencies {
-    implementation project(':modules-api:common')
-    implementation project(':modules-api:api-domain')
+    implementation project(':modules-batch:common')
+    implementation project(':modules-batch:batch-domain')
 
     implementation libs.spring.boot.starter.web
-    implementation libs.spring.boot.spring.doc
+    implementation libs.spring.boot.spring.batch
     implementation libs.spring.boot.starter.transactional
     implementation libs.lombok
     annotationProcessor libs.lombok
