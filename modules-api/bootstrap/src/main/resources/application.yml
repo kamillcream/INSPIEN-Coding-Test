@@ -2,10 +2,10 @@ spring:
   application:
     name: inspien
   datasource:
-    url: jdbc:mysql://${ORDER_TABLE_HOST}:${ORDER_TABLE_PORT}/${ORDER_TABLE_TABLENAME}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:oracle:thin:@${ORDER_TABLE_HOST}:${ORDER_TABLE_PORT}:${ORDER_TABLE_SID}
     username: ${ORDER_TABLE_USER}
     password: ${ORDER_TABLE_PASSWORD}
+
 
   jpa:
     hibernate:

@@ -2,14 +2,9 @@ spring:
   application:
     name: inspien
   datasource:
-    url: jdbc:mysql://localhost:3306/inspien?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: ${LOCAL_MYSQL_PASSWORD}
-
-  batch:
-    jdbc:
-      initialize-schema: always
+    url: jdbc:oracle:thin:@localhost:1521/freepdb1
+    username: appuser
+    password: appuser
 
   jpa:
     hibernate:
