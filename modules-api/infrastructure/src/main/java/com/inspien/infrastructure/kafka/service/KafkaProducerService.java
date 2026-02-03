@@ -15,6 +15,14 @@ public class KafkaProducerService implements KafkaProducerUseCase {
     private final KafkaTemplate<String, OrderShipmentPayload> kafkaTemplate;
 
     public void sendEvent(OrderShipmentPayload payload) {
-        kafkaTemplate.send("shipment.batch", payload);
+        kafkaTemplate.send("shipment.batch", payload)
+                .whenComplete((result, ex) -> {
+                    if (ex != null) {
+                        log.error("Failed to send shipment load event for orderId: {}", payload.getOrderId(), ex);
+                    } else {
+                        log.info("Shipment load event sent for orderId: {}", payload.getOrderId());
+                    }
+                });
+
     }
 }
