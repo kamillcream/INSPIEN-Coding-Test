@@ -65,20 +65,6 @@ public class SftpEventHandler {
     }
 
     private String generateFileContent(Order order) {
-        if(order.getOrderId() == null || order.getUserId() == null || order.getItemId() == null
-                || order.getApplicantKey() == null || order.getName() == null
-                || order.getAddress() == null || order.getItemName() == null
-                || order.getPrice() == null || order.getStatus() == null
-        ) {
-            log.error(
-                    "[ORDER_RECEIPT_SEND] step=VALIDATION_FAIL userId={} reason=NULL_REQUIRED_FIELD",
-                    order.getUserId()
-            );
-            throw new IllegalStateException(
-                    "Order has null required fields. orderId=" + order.getOrderId()
-            );
-        }
-
         return String.join("^",
                 order.getOrderId(),
                 order.getUserId(),
