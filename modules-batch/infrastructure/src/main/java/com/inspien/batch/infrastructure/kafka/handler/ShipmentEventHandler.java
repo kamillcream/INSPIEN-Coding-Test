@@ -11,6 +11,7 @@ import org.springframework.transaction.event.TransactionalEventListener;
 @RequiredArgsConstructor
 public class ShipmentEventHandler {
     private final KafkaProducerUseCase kafkaProducerService;
+
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void handleShipmentCreated(ShipmentCreatedEvent event) {
         kafkaProducerService.sendEvent(event.orderId());
