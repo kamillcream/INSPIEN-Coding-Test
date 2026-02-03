@@ -30,7 +30,7 @@ public class SftpEventHandler {
     @Retryable(value = IOException.class, maxAttempts = 3, backoff = @Backoff(delay = 1000))
     @Async
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
-    public void handleOrderCreated(Order order) {
+    public void handleOrderCreated(Order order) throws IOException{
         String receiptContent = generateFileContent(order);
         try {
             File receiptFile = generateReceiptTxtFile(receiptContent);
@@ -43,7 +43,7 @@ public class SftpEventHandler {
                     e.getMessage(),
                     e
             );
-            throw new RuntimeException(e);
+            throw e;
         }
 
     }
@@ -65,6 +65,20 @@ public class SftpEventHandler {
     }
 
     private String generateFileContent(Order order) {
+        if(order.getOrderId() == null || order.getUserId() == null || order.getItemId() == null
+                || order.getApplicantKey() == null || order.getName() == null
+                || order.getAddress() == null || order.getItemName() == null
+                || order.getPrice() == null || order.getStatus() == null
+        ) {
+            log.error(
+                    "[ORDER_RECEIPT_SEND] step=VALIDATION_FAIL userId={} reason=NULL_REQUIRED_FIELD",
+                    order.getUserId()
+            );
+            throw new IllegalStateException(
+                    "Order has null required fields. orderId=" + order.getOrderId()
+            );
+        }
+
         return String.join("^",
                 order.getOrderId(),
                 order.getUserId(),
