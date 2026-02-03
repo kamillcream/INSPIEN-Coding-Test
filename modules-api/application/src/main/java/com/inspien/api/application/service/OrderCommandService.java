@@ -47,10 +47,26 @@ public class OrderCommandService implements OrderCommandUseCase {
             Order order = Order.create(generateOrderId(), item.getUserId(), item.getItemId(), applicantKey,
                     header.getName(), header.getAddress(), item.getItemName(), String.valueOf(item.getPrice()), header.getStatus());
 
-            repo.save(order);
-            log.info("[ORDER_SAVE] orderId={} step=SUCCESS", order.getOrderId());
+            if(order.getOrderId() == null || order.getUserId() == null || order.getItemId() == null
+                    || order.getApplicantKey() == null || order.getName() == null
+                    || order.getAddress() == null || order.getItemName() == null
+                    || order.getPrice() == null || order.getStatus() == null
+            ) {
+                log.error(
+                        "[ORDER_RECEIPT_SEND] step=VALIDATION_FAIL userId={} reason=NULL_REQUIRED_FIELD",
+                        order.getUserId()
+                );
+                throw new IllegalStateException(
+                        "Order has null required fields. orderId=" + order.getOrderId()
+                );
+            }
 
-            eventPublisher.publishEvent(order);
+            else {
+                repo.save(order);
+                log.info("[ORDER_SAVE] orderId={} step=SUCCESS", order.getOrderId());
+
+                eventPublisher.publishEvent(order);
+            }
         }
     }
 
