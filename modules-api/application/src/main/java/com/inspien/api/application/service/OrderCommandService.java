@@ -5,21 +5,14 @@ import com.inspien.api.application.port.in.OrderCreateCommand;
 import com.inspien.api.application.port.in.OrderHeader;
 import com.inspien.api.application.port.in.OrderItem;
 import com.inspien.api.application.port.out.OrderOutPort;
-import com.inspien.api.application.port.out.SftpOutPort;
 import com.inspien.api.domain.Order;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -30,7 +23,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class OrderCommandService implements OrderCommandUseCase {
     private final OrderOutPort repo;
-    private final SftpOutPort sftpService;
+    private final ApplicationEventPublisher eventPublisher;
 
     @Value("${applicantKey}")
     private String applicantKey;
@@ -54,28 +47,26 @@ public class OrderCommandService implements OrderCommandUseCase {
             Order order = Order.create(generateOrderId(), item.getUserId(), item.getItemId(), applicantKey,
                     header.getName(), header.getAddress(), item.getItemName(), String.valueOf(item.getPrice()), header.getStatus());
 
-            repo.save(order);
-            log.info("[ORDER_SAVE] orderId={} step=SUCCESS", order.getOrderId());
-
-            String receiptContent = generateFileContent(order);
-            try {
-                File receiptFile = generateReceiptTxtFile(receiptContent);
-                try {
-                    sftpService.sendBySftp(receiptFile.toPath());
-                    log.info("[ORDER_RECEIPT_SEND] orderId={} step=SUCCESS", order.getOrderId());
-                    } finally {
-                    Files.deleteIfExists(receiptFile.toPath());
-                    }
-            } catch (IOException e) {
+            if(order.getOrderId() == null || order.getUserId() == null || order.getItemId() == null
+                    || order.getApplicantKey() == null || order.getName() == null
+                    || order.getAddress() == null || order.getItemName() == null
+                    || order.getPrice() == null || order.getStatus() == null
+            ) {
                 log.error(
-                        "[ORDER_RECEIPT_SEND] orderId={} step=FAIL reason={}",
-                        order.getOrderId(),
-                        e.getMessage(),
-                        e
+                        "[ORDER_RECEIPT_SEND] step=VALIDATION_FAIL userId={} reason=NULL_REQUIRED_FIELD",
+                        order.getUserId()
                 );
-                throw new RuntimeException(e);
+                throw new IllegalStateException(
+                        "Order has null required fields. orderId=" + order.getOrderId()
+                );
             }
 
+            else {
+                repo.save(order);
+                log.info("[ORDER_SAVE] orderId={} step=SUCCESS", order.getOrderId());
+
+                eventPublisher.publishEvent(order);
+            }
         }
     }
 
@@ -86,29 +77,6 @@ public class OrderCommandService implements OrderCommandUseCase {
                                 Function.identity(),
                         (existing, replacement) -> existing
                 ));
-    }
-
-    private File generateReceiptTxtFile(String content) throws IOException {
-        String fileName = "INSPIEN_[박진영]_" + "[" + LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")) + "]" +".txt";
-        Path path = Path.of(fileName);
-
-        Files.writeString(path, content, StandardCharsets.UTF_8);
-
-        return path.toFile();
-    }
-
-    private String generateFileContent(Order order) {
-        return String.join("^",
-                order.getOrderId(),
-                order.getUserId(),
-                order.getItemId(),
-                order.getApplicantKey(),
-                order.getName(),
-                order.getAddress(),
-                order.getItemName(),
-                order.getPrice()
-        ) + "\n";
     }
 
     private String generateOrderId() {

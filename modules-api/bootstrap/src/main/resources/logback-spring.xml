@@ -7,10 +7,10 @@
         </encoder>
     </appender>
 
-    <appender name="ORDER_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/order.log</file>
+    <appender name="API_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/api.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/order.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>logs/api.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -22,11 +22,11 @@
         <appender-ref ref="CONSOLE"/>
     </root>
     <logger name="com.inspien.api.application" level="INFO" additivity="false">
-        <appender-ref ref="ORDER_FILE"/>
+        <appender-ref ref="API_FILE"/>
     </logger>
 
     <logger name="com.inspien.api.infrastructure.kafka" level="INFO" additivity="false">
-        <appender-ref ref="ORDER_FILE"/>
+        <appender-ref ref="API_FILE"/>
     </logger>
 
 </configuration>
