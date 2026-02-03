@@ -1,6 +1,6 @@
-package com.inspien.infrastructure.kafka.consumer;
+package com.inspien.api.infrastructure.kafka.consumer;
 
-import com.inspien.application.port.out.OrderOutPort;
+import com.inspien.api.application.port.out.OrderOutPort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -19,5 +19,6 @@ public class SuccessEventConsumer {
     @Transactional
     public void consumeSuccessEvent(@Payload String orderId) {
         repo.markOrderSuccess(orderId);
+        log.info("[ORDER_STATUS_UPDATE] orderId={} step=SUCCESS", orderId);
     }
 }

@@ -1,4 +1,4 @@
-package com.inspien.domain;
+package com.inspien.api.domain;
 
 import lombok.*;
 
