@@ -129,7 +129,8 @@ public class OrderCommandService implements OrderCommandUseCase {
 
             if (prefix > 'Z') {
                 log.error(
-                        "[ORDER_SAVE] step=ID_GENERATE_FAIL orderId={} reason=ID_RANGE_OVER",
+                        "[ORDER_SAVE] step=ID_GENERATE_FAIL lastId={} prefix={} reason=ID_RANGE_OVER",
+                        lastId,
                         prefix
                 );
                 throw new IllegalStateException("주문 ID 최대 범위를 초과했습니다.");

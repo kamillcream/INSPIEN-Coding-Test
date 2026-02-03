@@ -48,7 +48,8 @@ public class ShipmentCommandService implements ShipmentCommandUseCase {
 
             if (prefix > 'Z') {
                 log.error(
-                        "[SHIPMENT_SAVE] step=ID_GENERATE_FAIL shipmentId={} reason=ID_RANGE_OVER",
+                        "[SHIPMENT_SAVE] step=ID_GENERATE_FAIL lastId={} prefix={} reason=ID_RANGE_OVER",
+                        lastId,
                         prefix
                 );
                 throw new IllegalStateException("배송 ID 최대 범위를 초과했습니다.");
