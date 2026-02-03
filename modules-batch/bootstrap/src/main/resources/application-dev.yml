@@ -32,6 +32,6 @@ logging:
   level:
     root: INFO
     com.inspien.batch.application: INFO  # 본인 패키지명으로 변경
-    com.inspien.batch.infrastructure: INFO  # 본인 패키지명으로 변경
+    com.inspien.batch.infrastructure.kafka: INFO  # 본인 패키지명으로 변경
 
 

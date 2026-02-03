@@ -29,4 +29,4 @@ logging:
   level:
     root: INFO
     com.inspien.api.application: INFO  # 본인 패키지명으로 변경
-    com.inspien.api.infrastructure: INFO  # 본인 패키지명으로 변경
+    com.inspien.api.infrastructure.kafka: INFO  # 본인 패키지명으로 변경
