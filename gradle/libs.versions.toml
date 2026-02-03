@@ -5,7 +5,6 @@ fixture = "1.2.0"
 jwt = "0.12.3"
 redisson = "3.52.0"
 springdoc = "2.8.4"
-connector = "8.3.0"
 mapstruct = "1.6.2"
 lombok = "1.18.42"
 transactional = "6.1.0"
@@ -26,6 +25,7 @@ mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.re
 
 org-redisson-starter = {module = "org.redisson:redisson-spring-boot-starter", version.ref = "redisson"}
 
+oracle-jdbc = {module = "com.oracle.database.jdbc:ojdbc11"}
 
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
 spring-boot-starter-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
@@ -41,10 +41,6 @@ spring-boot-spring-doc = { module = "org.springdoc:springdoc-openapi-starter-web
 
 spring-context = { module = "org.springframework:spring-context" }
 spring-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
-
-database-mariadb = { module = "org.mariadb.jdbc:mariadb-java-client" }
-database-h2 = { module = "com.h2database:h2" }
-mysql-connector = { module = "com.mysql:mysql-connector-j", version.ref = "connector" }
 
 test-fixture = { module = "com.appmattus.fixture:fixture", version.ref = "fixture" }
 

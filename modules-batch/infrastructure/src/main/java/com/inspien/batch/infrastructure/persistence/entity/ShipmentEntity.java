@@ -10,7 +10,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "SHIPMENT_TB")
+@Table(
+        name = "SHIPMENT_TB",
+        schema = "RECRUIT"
+)
 @Getter
 @Builder
 @NoArgsConstructor

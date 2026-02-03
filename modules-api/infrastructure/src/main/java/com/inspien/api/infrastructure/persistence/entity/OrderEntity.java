@@ -1,3 +1,4 @@
+
 package com.inspien.api.infrastructure.persistence.entity;
 
 import jakarta.persistence.Column;
@@ -10,7 +11,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "orders")
+@Table(
+        name = "ORDER_TB",
+        schema = "RECRUIT"
+)
 @Getter
 @Builder
 @NoArgsConstructor
