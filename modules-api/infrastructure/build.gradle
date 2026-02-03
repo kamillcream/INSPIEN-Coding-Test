@@ -15,7 +15,7 @@ dependencies {
     implementation libs.spring.boot.starter.jpa
     implementation libs.spring.boot.starter.web
     implementation libs.spring.boot.starter.kafka
-    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+    runtimeOnly libs.oracle.jdbc
 
     compileOnly libs.lombok
     annotationProcessor libs.lombok
