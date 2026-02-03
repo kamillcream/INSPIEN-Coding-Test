@@ -1,7 +1,7 @@
 package com.inspien.api.dto;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.inspien.application.port.in.OrderHeader;
+import com.inspien.api.application.port.in.OrderHeader;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
