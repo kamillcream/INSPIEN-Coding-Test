@@ -33,7 +33,6 @@ dependencies {
         exclude group: 'org.mockito', module: 'mockito-core'
     }
     testImplementation libs.spring.mockk
-    testImplementation libs.database.h2
 }
 
 repositories {

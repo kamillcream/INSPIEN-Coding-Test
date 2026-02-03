@@ -13,7 +13,7 @@ dependencies {
 
     implementation libs.spring.boot.starter.jpa
     implementation libs.spring.boot.starter.kafka
-    implementation libs.mysql.connector
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
 
     compileOnly libs.lombok
     annotationProcessor libs.lombok
@@ -26,7 +26,6 @@ dependencies {
     testAnnotationProcessor libs.mapstruct.processor
 
     testImplementation libs.spring.boot.starter.test
-    testImplementation libs.database.h2
 }
 
 repositories {

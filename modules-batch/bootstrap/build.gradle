@@ -22,7 +22,6 @@ dependencies {
 
     implementation libs.spring.boot.starter.jpa
     implementation libs.spring.boot.starter.web
-    implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation libs.bundles.bootstrap
     implementation libs.lombok
     annotationProcessor libs.lombok
@@ -33,7 +32,6 @@ dependencies {
         exclude group: 'org.mockito', module: 'mockito-core'
     }
     testImplementation libs.spring.mockk
-    testImplementation libs.database.h2
 }
 
 repositories {
