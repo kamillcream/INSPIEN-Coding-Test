@@ -23,3 +23,10 @@ sftp:
   username: ${SFTP_CONN_USER}
   password: ${SFTP_CONN_PASSWORD}
   remote-dir: ${FILE_PATH}
+
+logging:
+  config: classpath:logback-spring.xml  # 또는 logback.xml
+  level:
+    root: INFO
+    com.inspien.api.application: INFO  # 본인 패키지명으로 변경
+    com.inspien.api.infrastructure: INFO  # 본인 패키지명으로 변경

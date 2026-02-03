@@ -15,3 +15,10 @@ spring:
     bootstrap-servers: localhost:9092
 
 applicantKey: ${APPLICANT_KEY}
+
+logging:
+  config: classpath:logback-spring.xml  # 또는 logback.xml
+  level:
+    root: INFO
+    com.inspien.batch.application: INFO  # 본인 패키지명으로 변경
+    com.inspien.batch.infrastructure: INFO  # 본인 패키지명으로 변경
