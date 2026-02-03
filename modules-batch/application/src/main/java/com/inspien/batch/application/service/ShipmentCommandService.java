@@ -6,6 +6,7 @@ import com.inspien.batch.application.port.in.dto.OrderShipmentCommand;
 import com.inspien.batch.application.port.out.ShipmentOutPort;
 import com.inspien.batch.domain.Shipment;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = false)
 public class ShipmentCommandService implements ShipmentCommandUseCase {
     private final ShipmentOutPort repo;
-    private final KafkaProducerUseCase kafkaProducerService;
+    private final ApplicationEventPublisher eventPublisher;
 
     @Override
     public void processShipment(OrderShipmentCommand command) {
@@ -23,7 +24,7 @@ public class ShipmentCommandService implements ShipmentCommandUseCase {
 
         repo.save(shipment);
 
-        kafkaProducerService.sendEvent(command.getOrderId());
+        eventPublisher.publishEvent(command.getOrderId());
     }
 
     private String generateShipmentId() {
