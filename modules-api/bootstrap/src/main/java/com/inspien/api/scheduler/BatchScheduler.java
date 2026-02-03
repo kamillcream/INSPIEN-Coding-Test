@@ -13,8 +13,7 @@ import org.springframework.stereotype.Component;
 public class BatchScheduler {
     private final SchedulerUseCase schedulerService;
 
-    // TODO: 5분으로 변경
-    @Scheduled(cron = "*/5 * * * * *")
+    @Scheduled(cron = "0 */5 * * * *")
     public void publishShipmentReadyEvents() {
         schedulerService.publishShipmentReadyEvents();
     }
