@@ -22,7 +22,7 @@ import java.time.format.DateTimeFormatter;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class SftpEventHandler{
+public class SftpEventHandler {
     private final SftpOutPort sftpAdapter;
 
     @Async
