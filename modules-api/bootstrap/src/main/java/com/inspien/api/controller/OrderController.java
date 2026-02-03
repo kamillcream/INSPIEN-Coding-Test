@@ -1,7 +1,7 @@
 package com.inspien.api.controller;
 
 import com.inspien.api.dto.OrderRequestDto;
-import com.inspien.application.port.in.OrderCommandUseCase;
+import com.inspien.api.application.port.in.OrderCommandUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;

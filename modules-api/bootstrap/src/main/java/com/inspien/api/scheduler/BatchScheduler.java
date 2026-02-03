@@ -1,6 +1,6 @@
 package com.inspien.api.scheduler;
 
-import com.inspien.application.port.in.SchedulerUseCase;
+import com.inspien.api.application.port.in.SchedulerUseCase;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;

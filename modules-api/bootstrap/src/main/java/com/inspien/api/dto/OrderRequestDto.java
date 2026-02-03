@@ -3,9 +3,9 @@ package com.inspien.api.dto;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.inspien.application.port.in.OrderCreateCommand;
-import com.inspien.application.port.in.OrderHeader;
-import com.inspien.application.port.in.OrderItem;
+import com.inspien.api.application.port.in.OrderCreateCommand;
+import com.inspien.api.application.port.in.OrderHeader;
+import com.inspien.api.application.port.in.OrderItem;
 import lombok.Data;
 
 import java.util.List;
