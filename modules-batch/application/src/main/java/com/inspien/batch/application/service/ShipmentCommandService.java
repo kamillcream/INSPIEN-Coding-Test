@@ -3,6 +3,7 @@ package com.inspien.batch.application.service;
 import com.inspien.batch.application.port.in.KafkaProducerUseCase;
 import com.inspien.batch.application.port.in.ShipmentCommandUseCase;
 import com.inspien.batch.application.port.in.dto.OrderShipmentCommand;
+import com.inspien.batch.application.port.in.dto.ShipmentCreatedEvent;
 import com.inspien.batch.application.port.out.ShipmentOutPort;
 import com.inspien.batch.domain.Shipment;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +25,7 @@ public class ShipmentCommandService implements ShipmentCommandUseCase {
 
         repo.save(shipment);
 
-        eventPublisher.publishEvent(command.getOrderId());
+        eventPublisher.publishEvent(new ShipmentCreatedEvent(command.getOrderId()));
     }
 
     private String generateShipmentId() {
