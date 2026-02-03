@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class BatchScheduler {
     private final SchedulerUseCase schedulerService;
 
-    @Scheduled(cron = "0 */5 * * * *")
+    @Scheduled(cron = "0 */5 * * * *", zone = "Asia/Seoul")
     public void publishShipmentReadyEvents() {
         schedulerService.publishShipmentReadyEvents();
     }
