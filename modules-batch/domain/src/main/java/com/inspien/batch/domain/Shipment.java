@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Transporter {
+public class Shipment {
 
     private String shipmentId;
 
@@ -20,4 +20,8 @@ public class Transporter {
     private String applicantKey;
 
     private String address;
+
+    public static Shipment create(String shipmentId, String orderId, String itemId, String applicantKey, String address){
+        return new Shipment(shipmentId, orderId, itemId, applicantKey, address);
+    }
 }

@@ -20,7 +20,15 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, String> {
             SELECT o FROM OrderEntity o
             ORDER BY o.orderId DESC
             """)
-    List<OrderEntity> findAllByOrderByOrderIdDesc(Pageable pageable);
+    List<OrderEntity> findLatestOrder(Pageable pageable);
+
+
+    @Query("""
+            SELECT o FROM OrderEntity o
+            WHERE o.status = 'N'
+            ORDER BY o.orderId ASC
+            """)
+    List<OrderEntity> findPendingOrders();
 
     @Modifying(flushAutomatically = true, clearAutomatically = true)
     @Query("""
@@ -28,5 +36,5 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, String> {
     SET o.status = 'Y'
     WHERE o.orderId = :orderId
     """)
-    void markAsSent(@Param("orderId") String orderId);
+    void markAsY(@Param("orderId") String orderId);
 }

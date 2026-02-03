@@ -8,13 +8,11 @@ tasks.named('jar') {
 
 dependencies {
     implementation project(':modules-batch:common')
-    implementation project(':modules-api:api-domain')
-    implementation project(':modules-api:api-infrastructure')
     implementation project(':modules-batch:batch-domain')
     implementation project(':modules-batch:batch-application')
 
     implementation libs.spring.boot.starter.jpa
-    implementation libs.spring.boot.spring.batch
+    implementation libs.spring.boot.starter.kafka
     implementation libs.mysql.connector
 
     compileOnly libs.lombok

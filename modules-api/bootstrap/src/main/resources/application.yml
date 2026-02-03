@@ -7,6 +7,13 @@ spring:
     username: ${ORDER_TABLE_USER}
     password: ${ORDER_TABLE_PASSWORD}
 
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
 applicantKey: ${APPLICANT_KEY}
 
 

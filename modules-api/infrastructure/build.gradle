@@ -14,6 +14,7 @@ dependencies {
 
     implementation libs.spring.boot.starter.jpa
     implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.starter.kafka
     implementation libs.mysql.connector
 
     compileOnly libs.lombok

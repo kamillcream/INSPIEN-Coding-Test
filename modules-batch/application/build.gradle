@@ -11,7 +11,6 @@ dependencies {
     implementation project(':modules-batch:batch-domain')
 
     implementation libs.spring.boot.starter.web
-    implementation libs.spring.boot.spring.batch
     implementation libs.spring.boot.starter.transactional
     implementation libs.lombok
     annotationProcessor libs.lombok

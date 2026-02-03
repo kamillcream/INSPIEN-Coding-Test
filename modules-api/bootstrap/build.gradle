@@ -21,6 +21,8 @@ dependencies {
 
     implementation libs.spring.boot.starter.jpa
     implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.starter.kafka
+
     implementation libs.bundles.bootstrap
     implementation libs.lombok
     annotationProcessor libs.lombok

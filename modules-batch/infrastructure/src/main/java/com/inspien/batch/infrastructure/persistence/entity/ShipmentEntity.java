@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TransporterEntity {
+public class ShipmentEntity {
     @Id
     @Column(name = "SHIPMENT_ID")
     private String shipmentId;

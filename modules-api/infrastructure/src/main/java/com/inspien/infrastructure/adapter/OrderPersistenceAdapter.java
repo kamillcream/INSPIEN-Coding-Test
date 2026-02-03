@@ -27,8 +27,22 @@ public class OrderPersistenceAdapter implements OrderOutPort {
     @Override
     public String findLastId() {
         Pageable lastOne = PageRequest.of(0, 1);
-        List<OrderEntity> results = repo.findAllByOrderByOrderIdDesc(lastOne);
+        List<OrderEntity> results = repo.findLatestOrder(lastOne);
 
         return results.isEmpty() ? null : results.getFirst().getOrderId();
+    }
+
+    @Override
+    public void markOrderSuccess(String orderId) {
+        repo.markAsY(orderId);
+    }
+
+    @Override
+    public List<Order> findShipmentCandidates() {
+        List<OrderEntity> entities = repo.findPendingOrders();
+        if(entities.isEmpty()) {
+            return List.of();
+        }
+        return entities.stream().map(mapper::toDomain).toList();
     }
 }
