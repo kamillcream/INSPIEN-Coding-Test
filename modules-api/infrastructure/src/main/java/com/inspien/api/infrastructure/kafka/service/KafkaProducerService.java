@@ -1,6 +1,7 @@
-package com.inspien.batch.infrastructure.kafka.service;
+package com.inspien.api.infrastructure.kafka.service;
 
-import com.inspien.batch.application.port.in.KafkaProducerUseCase;
+import com.inspien.api.application.port.in.KafkaProducerUseCase;
+import com.inspien.api.application.port.in.OrderShipmentPayload;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -11,28 +12,29 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class KafkaProducerService implements KafkaProducerUseCase {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, OrderShipmentPayload> kafkaTemplate;
 
-    public void sendEvent(String orderId) {
-        kafkaTemplate.send("shipment.success", orderId)
+    public void sendEvent(OrderShipmentPayload payload) {
+        kafkaTemplate.send("shipment.batch", payload)
                 .whenComplete((result, ex) -> {
                     if (ex != null) {
                         log.error(
-                                "[SHIPMENT_SUCCESS] step=SEND_FAIL orderId={} topic=shipment.success reason={} message={}",
-                                orderId,
+                                "[SHIPMENT_BATCH] step=SEND_FAIL orderId={} topic=shipment.batch reason={} message={}",
+                                payload.getOrderId(),
                                 ex.getClass().getSimpleName(),
                                 ex.getMessage(),
                                 ex
                         );
                     } else {
                         log.info(
-                                "[SHIPMENT_SUCCESS] step=SEND_SUCCESS orderId={} topic={} partition={} offset={}",
-                                orderId,
+                                "[SHIPMENT_BATCH] step=SEND_SUCCESS orderId={} topic={} partition={} offset={}",
+                                payload.getOrderId(),
                                 result.getRecordMetadata().topic(),
                                 result.getRecordMetadata().partition(),
                                 result.getRecordMetadata().offset()
                         );
                     }
                 });
+
     }
 }
