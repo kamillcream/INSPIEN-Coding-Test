@@ -98,3 +98,179 @@
 2026-02-03 14:49:50 INFO  Shipment success event sent for orderId: A190
 2026-02-03 14:49:50 INFO  Shipment success event sent for orderId: A191
 2026-02-03 14:49:50 INFO  Shipment success event sent for orderId: A192
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A219 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A220 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A221 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A222 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A223 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A224 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A193
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A194
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A195
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A196
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A225 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A226 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A227 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A197
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A198
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A199
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A200
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A228 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A229 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A230 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A231 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A201
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A202
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A203
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A204
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A205
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A232 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A233 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A234 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A235 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A236 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A206
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A207
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A208
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A209
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A237 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A238 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A239 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A240 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A241 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A210
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A211
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A212
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A213
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A214
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A242 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A243 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A244 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A245 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A246 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A215
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A216
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A217
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A218
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A219
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A247 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A248 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A249 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A250 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A251 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A252 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A220
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A221
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A222
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A223
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A224
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A253 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A254 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A255 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A256 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A257 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A225
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A226
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A227
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A228
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A229
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A230
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A258 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A259 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A260 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A261 step=SUCCESS
+2026-02-03 14:57:30 INFO  [SHIPMENT_SAVE] shipmentId=A262 step=SUCCESS
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A231
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A232
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A233
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A234
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A235
+2026-02-03 14:57:30 INFO  Shipment success event sent for orderId: A236
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A263 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A264 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A265 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A266 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A267 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A268 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A269 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A237
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A238
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A239
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A240
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A241
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A270 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A271 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A272 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A273 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A274 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A242
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A243
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A244
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A245
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A246
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A275 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A276 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A277 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A278 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A247
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A248
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A249
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A250
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A279 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A280 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A281 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A282 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A251
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A252
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A253
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A254
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A255
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A283 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A284 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A285 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A286 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A287 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A256
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A257
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A258
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A259
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A260
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A288 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A289 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A290 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A291 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A292 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A261
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A262
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A263
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A264
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A265
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A293 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A294 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A295 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A296 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A266
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A267
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A268
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A269
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A297 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A298 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A299 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A300 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A301 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A270
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A271
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A272
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A273
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A274
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A302 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A303 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A304 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A305 step=SUCCESS
+2026-02-03 14:58:40 INFO  [SHIPMENT_SAVE] shipmentId=A306 step=SUCCESS
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A275
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A276
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A277
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A278
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A279
+2026-02-03 14:58:40 INFO  Shipment success event sent for orderId: A280
